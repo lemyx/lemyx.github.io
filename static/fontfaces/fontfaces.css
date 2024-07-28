@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Charter";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./Charter_Bold_Italic.subset.woff2");
+}
+@font-face {
+  font-family: "Charter";
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./Charter_Bold.subset.woff2");
+}
+@font-face {
+  font-family: "Charter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./Charter_Italic.subset.woff2");
+}
+@font-face {
+  font-family: "Charter";
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./Charter_Regular.subset.woff2");
+}
+@font-face {
+  font-family: "Martian Mono Nr Lt";
+  font-style: regular;
+  font-weight: 300;
+  font-display: swap;
+  src: url("./MartianMono-NrLt.subset.woff2");
+}
+@font-face {
+  font-family: "Smiley Sans Oblique";
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./SmileySans-Oblique.subset.woff2");
+}
+@font-face {
+  font-family: "Zhuque Fangsong (technical preview)";
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./ZhuqueFangsong-Regular.subset.woff2");
+}
+@font-face {
+  font-family: "LM Roman 7";
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./lmroman7-bold.subset.woff2");
+}
+@font-face {
+  font-family: "LM Roman 7";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./lmroman7-italic.subset.woff2");
+}
+@font-face {
+  font-family: "LM Roman 7";
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./lmroman7-regular.subset.woff2");
+}

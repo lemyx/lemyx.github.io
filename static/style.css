@@ -1,0 +1,435 @@
+@import url("./fontfaces/fontfaces.css");
+
+.header,aside,body {
+	padding: 2em;
+	font-size: 1.1em;
+	font-family: "Zhuque Fangsong (technical preview)","Clear Han Serif","Noto Serif CJK SC","Source Han Serif CN",serif
+}
+
+body {
+	margin: auto;
+	max-width: 45rem;
+	background-size: cover;
+	word-wrap: break-word;
+	line-height: 1.5em
+}
+
+.header {
+	padding: 1em 0;
+	font-size: 1.2em
+}
+
+#blog-nav {
+	margin: 4em 0 5rem;
+	text-align: center
+}
+
+#blog-nav a {
+	color: #000;
+	margin: 0 1em 0 1em;
+	font-weight: 900;
+	font-size: 150%;
+	padding: 0.5em;
+}
+
+#xuan {
+	width: 100%;
+	height: 15rem;
+	background-color: #2b2b2d;
+	border-radius: .5em;
+	overflow: hidden;
+	cursor: crosshair;
+	border: 1px solid #ccc;
+	position: relative;
+}
+
+#xuan::before {
+	position: absolute;
+	content: '';
+	left: 50%;
+	top: 100%;
+	transform: translate(-50%,-50%);
+	width: 0;
+	height: 0;
+	background: radial-gradient(circle closest-side,rgba(255,255,255,0.72) 4%,transparent);
+	opacity: 0;
+	transition: all .5s
+}
+
+#xuan:hover::before {
+	opacity: 1;
+	width: 160%;
+	height: 800%;
+}
+
+#blog-tail {
+	margin-top: 5rem
+}
+
+#huang {
+	width: 40%;
+	height: 4em;
+	background-color: #ffd100;
+	border-radius: .5em;
+	margin-top: 1em
+}
+
+.post-item {
+	margin: 3em 0;
+	line-height: 110%
+}
+
+.post-item .post-title {
+	width: 100%;
+	line-height: 100%
+}
+
+.post-item .post-date-and-tags {
+	display: inline-flex;
+	width: 100%;
+	color: #383848;
+	font-size: 90%;
+	justify-content: space-between
+}
+
+.post-item .post-date-and-tags .post-date {
+	white-space: nowrap;
+	font-weight: bolder;
+	font-size: 1em
+}
+
+.post-item .post-date-and-tags .post-tags a {
+	margin: 0 .5em 0 0
+}
+
+.post-item .post-date-and-tags .post-tags a:before {
+	color: grey;
+	content: "#"
+}
+
+#text-table-of-contents ul {
+	padding: 0;
+	border: 0;
+	list-style-type: none
+}
+
+#postamble {
+	font-family: "Smiley Sans Oblique",sans-serif;
+	margin: 2em 0 0
+}
+
+#single-tag-list {
+	padding-left: 2em
+}
+
+#other-posts:before {
+	color: #a00;
+	content: ">>";
+	font-size: 100%
+}
+
+#other-posts {
+	margin: 2em 0 0
+}
+
+h1.title {
+	margin: 1.5rem 0 3rem;
+	padding-top: .02em;
+	font-size: 180%
+}
+
+aside {
+	margin: 1rem 0 0;
+	color: #667;
+	font-style: italic
+}
+
+p {
+	margin-bottom: 1em
+}
+
+#content li {
+	margin-top: .5em
+}
+
+#content ol {
+	margin-left: 0;
+	padding-left: .7em;
+	border-left: 1px solid rgba(20,19,19,0.04);
+	list-style-type: none;
+	counter-reset: sectioncounter
+}
+
+#content ol li:before {
+	color: #a00;
+	font-size: 1em;
+	font-family: "Charter";
+	content: counters(sectioncounter,"-") " ";
+	counter-increment: sectioncounter
+}
+
+#content ul li:before {
+	content: none
+}
+
+li>p {
+	display: inline
+}
+
+table {
+	margin-bottom: 1.5em;
+	max-width: 95%;
+	border-collapse: collapse;
+    overflow: auto;
+    display: inline-block;
+}
+
+
+tr:nth-child(even) { background: #EEE; }
+
+table tr+tr {
+	border-top: 1px solid #ccc
+}
+
+table td+td {
+	border-left: 1px solid #ccc
+}
+
+table td {
+	padding: .4em;
+	text-align: center;
+	hyphens: none
+}
+
+blockquote:before {
+	display: block;
+	margin: .1em -1em -.4em -1.2em;
+	padding: 0;
+	color: #a00;
+	content: "“";
+	font-weight: bolder;
+	font-size: 300%
+}
+
+blockquote {
+	margin: .5rem 1em 0;
+	padding: .2em 1em .2em 2em;
+	border-radius: 5px;
+	background: #fbf8f4
+}
+
+table th {
+	padding: .3rem .5rem;
+	text-transform: uppercase;
+	font-weight: 400
+}
+
+.example,.org-src-container,.src {
+	font-size: .88em;
+	font-family: "Martian Mono Nr Lt",monospace
+}
+
+code {
+	font-size: .71em;
+	font-family: "Martian Mono Nr Lt",monospace;
+	font-weight: lighter;
+	padding: .2em .2em .1em .2em;
+	border: 1px solid #10101020;
+	border-radius: .3em
+}
+
+.example,.src {
+	margin-right: 1em;
+	margin-left: 1em
+}
+
+.section-number-2,.section-number-3,.section-number-4 {
+	color: #a00;
+	font-family: "LM Roman 7";
+	font-size: 1.3em;
+	font-weight: 900
+}
+
+.outline-2 {
+	margin-bottom: 4em
+}
+
+.outline-3 {
+	margin-top: 3em
+}
+
+.outline-4 {
+	margin-top: 2em
+}
+
+.tag {
+	padding: 4px;
+	text-decoration: underline;
+	
+	font-weight: 400
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	border-radius: 1px
+}
+
+a {
+	color: #000;
+	text-decoration: none
+}
+
+div.nav a:active div {
+	background: #cacaca
+}
+
+a:active {
+	color: #777
+}
+
+a:hover {
+	text-decoration: underline;
+	filter: drop-shadow(0.1em .1em 1em #a00)
+}
+
+.outline-2 a[href]:after,p.footpara>a:after,.outline-2 a[href]:before,p.footpara>a:before {
+	color: #a00;
+	content: "*";
+	font-weight: bold
+}
+
+a:visited {
+	text-decoration: line-through
+}
+
+.tag-item-title:before {
+	content: "#";
+}
+
+.tag-item-title {
+	font-weight: 700;
+	font-size: 1.5em
+}
+
+.tag-item {
+	padding: 0.3em;
+}
+
+.tag-item-count {
+	margin: 2px;
+	color: #a00
+}
+
+.tag-item-wrapper {
+	padding: 6px;
+	border: 1px solid #888;
+	
+}
+
+.org-svg {
+	width: auto
+}
+
+.org-center {
+    text-align: center;
+    align-content: center;
+}
+
+pre {
+	overflow-x: auto;
+	margin-bottom: 20px;
+	padding: 1em;
+	background: #f5f7f9;
+	vertical-align: text-bottom
+}
+
+figcaption,figure {
+	text-align: center
+}
+
+figcaption {
+	z-index: 300;
+	outline: 0;
+	color: #666665;
+	font-weight: 400;
+	font-style: italic;
+	font-size: .7em/1.52
+}
+
+a.footref[href]:before {
+	content: ""
+}
+
+a.footref[href]:after {
+	content: ""
+}
+
+a.footref[href] {
+	color: #00a;
+	font-weight: 400;
+	font-style: italic
+}
+
+.footdef {
+	display: flex;
+	margin-bottom: .5em;
+	flex-direction: row;
+	font-style: oblique
+}
+
+sup .footnum {
+	margin-right: .5em;
+	color: #00a;
+	font-style: italic;
+	font-family: "Clear Serif",serif
+}
+
+.footpara {
+	display: inline
+}
+
+.todo {
+	display: none
+}
+
+.timestamp::before {
+    content: "T";
+    background-color: #aa000080;
+    color: #000;
+    margin-right: 0.3em;
+    padding: 0.1em 0.3em 0.1em 0.2em;
+}
+.timestamp {
+    font-size: 90%;
+    padding: 0.1em 0.1em 0.1em 0;
+    border-radius: 3px;
+    border: 1px solid #aa000080;
+}
+
+
+@media(min-width:80rem) {
+	#table-of-contents {
+		position: fixed;
+		height: 40%;
+		bottom: 10%;
+		left: 4em;
+		padding-right: .5em;
+		font-size: 90%
+	}
+
+	#text-table-of-contents {
+		overflow-y: scroll;
+		max-height: 100%;
+		padding-right: .5em
+	}
+
+	#table-of-contents .active {
+		color: #a00
+	}
+}
+
+.post-divider {
+  border: 1px solid #ccc; /* 横线的样式 */
+  margin: 20px 0; /* 控制分割线上下的间距 */
+}

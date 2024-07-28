@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://lemyx.github.io/rss.xml"
+      title="RSS feed for https://lemyx.github.io/">
+<title>双路4090装机方案</title>
+<meta name="author" content="lemyx">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/toc.js" type="text/javascript" defer></script>
+<script src="static/others.js" type="text/javascript" defer></script>
+<link rel="icon" href="static/favicon.ico"></head>
+<body>
+<div id="preamble" class="status"><div id="blog-nav">
+<a href="https://lemyx.github.io/index.html">Home</a>
+<a href="https://lemyx.github.io/tags.html">Tags</a>
+<a href="https://lemyx.github.io/rss.xml">Feeds</a>
+<a href="https://lemyx.github.io/about.html">About</a></div></div>
+<div id="content">
+<div class="post-date">28 Jul 2024</div><h1 class="post-title"><a href="https://lemyx.github.io/2024-07-28-双路4090装机方案.html">双路4090装机方案</a></h1>
+
+<div id="outline-container-orgffd5bc0" class="outline-2">
+<h2 id="orgffd5bc0"><span class="section-number-2">1.</span> 硬件篇</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org8ab8d11" class="outline-3">
+<h3 id="org8ab8d11"><span class="section-number-3">1.1.</span> 硬件清单</h3>
+<div class="outline-text-3" id="text-1-1">
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">DEVICE</th>
+<th scope="col" class="org-left">TYPE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">主板</td>
+<td class="org-left">MSI MPG X670E CARBON WIFI</td>
+</tr>
+
+<tr>
+<td class="org-left">CPU</td>
+<td class="org-left">AMD R9 7900X3D</td>
+</tr>
+
+<tr>
+<td class="org-left">CPU 散热器</td>
+<td class="org-left">NOCTUA NH-D15</td>
+</tr>
+
+<tr>
+<td class="org-left">电源</td>
+<td class="org-left">Seasonic Titanium TX1600W</td>
+</tr>
+
+<tr>
+<td class="org-left">内存</td>
+<td class="org-left">Kingston FURY DDR5 6000 32G x2</td>
+</tr>
+
+<tr>
+<td class="org-left">固态硬盘</td>
+<td class="org-left">SAMSUNG 980 PRO 2TB / SN810 512GB</td>
+</tr>
+
+<tr>
+<td class="org-left">机械硬盘</td>
+<td class="org-left">WD40EJRX 4TB / WD43PURZ 4TB</td>
+</tr>
+
+<tr>
+<td class="org-left">机箱</td>
+<td class="org-left">PHANTEKS ENTHOO PRO II Server Edition</td>
+</tr>
+
+<tr>
+<td class="org-left">机箱风扇</td>
+<td class="org-left">Thermalright TL-B14B EXTREM, TL-B12, TL-C12 pro</td>
+</tr>
+
+<tr>
+<td class="org-left">显卡</td>
+<td class="org-left">MSI X TRIO 24G x2</td>
+</tr>
+
+<tr>
+<td class="org-left">显卡延长线</td>
+<td class="org-left">京兆信息PCIe4.0显卡延长线</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org78a675e" class="outline-3">
+<h3 id="org78a675e"><span class="section-number-3">1.2.</span> 注意事项</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org328abdc" class="outline-4">
+<h4 id="org328abdc"><span class="section-number-4">1.2.1.</span> 越薄的显卡越好</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+RTX4090 这一代显卡据称差距并不大, 从安装的难易度角度考虑, 买薄款型号更容易在一款机箱中塞下两张显卡。
+</p>
+
+<p>
+为了发挥两张显卡的性能, 希望他们都可以安装在主板的 PCIE5.0 插槽上。尽管市面不乏支持x8x8拆分的主板, 但安装两块厚度大于三槽的 4090 显卡大概率不在设计目标内。
+</p>
+
+<p>
+ROG CROSSHAIR X670E HERO 是已知唯一满足插槽间距的主板。然而实际安装过程很艰难，勉强装上之后也会为两块显卡之间狭小的散热空间捏一把汗。且该主板售价高昂，消费者如果没能一次性买到良品，退换货时难免心情复杂。
+</p>
+
+<p>
+在 RTX4090 这一代显卡里, 技嘉风魔似乎是最薄的, 为主板的选择提供了更多的可能, 大大降低了双路4090工作站的安装难度。
+</p>
+</div>
+</div>
+<div id="outline-container-orga2de269" class="outline-4">
+<h4 id="orga2de269"><span class="section-number-4">1.2.2.</span> 如果不慎买了厚显卡该怎么做</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+在厚度这一方面, 这里需要面对的微星4090魔龙稳坐第一梯队。经过市场调研, 最终选择了延长线方案。一块显卡直插主板, 另一块显卡通过延长线延伸到机箱外。
+</p>
+
+<p>
+延续显卡延长线的思路, 如果在防尘这方面完全摆烂, 可以考虑开放式机箱方案, 机架是很好的选择。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbfc0584" class="outline-2">
+<h2 id="orgbfc0584"><span class="section-number-2">2.</span> 软件篇</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgb318cc3" class="outline-3">
+<h3 id="orgb318cc3"><span class="section-number-3">2.1.</span> 远程访问服务器的 TUI 环境</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+借助小米智能插座实现对服务器通电的远程控制。
+</p>
+
+<p>
+在主板BIOS开启通电自启可以实现远程开机。
+</p>
+
+<p>
+借助公网云服务器搭建 FRP server/client 可以通过 SSH 远程连接到服务器, 这里 FRP 服务的搭建可以选择手搓或借助 1panel 等运维面板。
+</p>
+</div>
+</div>
+<div id="outline-container-orgdcc5598" class="outline-3">
+<h3 id="orgdcc5598"><span class="section-number-3">2.2.</span> 远程访问服务器的 GUI 环境</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+需要考虑 RDP 技术或远程控制软件。
+</p>
+</div>
+</div>
+<div id="outline-container-org38df53b" class="outline-3">
+<h3 id="org38df53b"><span class="section-number-3">2.3.</span> 深度学习环境</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+网络上关于搭建深度学习环境的资料汗牛充栋, 这里推荐参考稚晖君的帖子 <a href="https://zhuanlan.zhihu.com/p/336429888">【保姆级教程】个人深度学习工作站配置指南</a>。
+</p>
+
+<p>
+值得一提的是, 出于远程访问稳定性的考虑, 这里选择了 Ubuntu Server 24.04 LTS 作为服务器的操作系统。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgab02959" class="outline-2">
+<h2 id="orgab02959"><span class="section-number-2">3.</span> 碎碎念</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgb2f3831" class="outline-3">
+<h3 id="orgb2f3831"><span class="section-number-3">3.1.</span> 汝非鱼安知鱼之乐</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+配置一套自己的深度学习工作站具有其独特的意义和乐趣, DIY过程的自由和踩过的坑都是宝贵的经历。
+</p>
+</div>
+</div>
+<div id="outline-container-org8bc7c09" class="outline-3">
+<h3 id="org8bc7c09"><span class="section-number-3">3.2.</span> 学术合作</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+从研究课题的规模及经济角度考虑, 与工业界合作在某些时候是更好的选择。
+</p>
+</div>
+</div>
+</div>
+<div class="taglist"><a href="https://lemyx.github.io/tags.html">Tags</a>: <a href="https://lemyx.github.io/tag-机器学习.html">机器学习</a> </div></div>
+<div id="postamble" class="status"></div>
+</body>
+</html>
