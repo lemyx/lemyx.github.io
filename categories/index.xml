@@ -1,1 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on XiuDi's Blog</title><link>https://xiudi.tech/categories/</link><description>Recent content in Categories on XiuDi's Blog</description><generator>Hugo</generator><language>zh-CN</language><managingEditor>dyi.shiou@gmail.com (xiudi)</managingEditor><webMaster>dyi.shiou@gmail.com (xiudi)</webMaster><lastBuildDate>Sat, 07 Mar 2026 20:06:48 +0800</lastBuildDate><atom:link href="https://xiudi.tech/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs</title><link>https://xiudi.tech/categories/emacs/</link><pubDate>Sat, 07 Mar 2026 18:28:00 +0800</pubDate><author>dyi.shiou@gmail.com (xiudi)</author><guid>https://xiudi.tech/categories/emacs/</guid><description/></item><item><title>机器学习</title><link>https://xiudi.tech/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link><pubDate>Sun, 28 Jul 2024 00:00:00 +0800</pubDate><author>dyi.shiou@gmail.com (xiudi)</author><guid>https://xiudi.tech/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on </title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>dyi.shiou@gmail.com (xiudi)</managingEditor>
+    <webMaster>dyi.shiou@gmail.com (xiudi)</webMaster>
+    <lastBuildDate>Sat, 07 Mar 2026 20:06:48 +0800</lastBuildDate>
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs</title>
+      <link>/categories/emacs/</link>
+      <pubDate>Sat, 07 Mar 2026 18:28:00 +0800</pubDate><author>dyi.shiou@gmail.com (xiudi)</author>
+      <guid>/categories/emacs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>机器学习</title>
+      <link>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 28 Jul 2024 00:00:00 +0800</pubDate><author>dyi.shiou@gmail.com (xiudi)</author>
+      <guid>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
