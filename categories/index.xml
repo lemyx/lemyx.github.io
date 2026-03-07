@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>/categories/</link>
+    <link>https://lemyx.github.io/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <managingEditor>dyi.shiou@gmail.com (lemyx)</managingEditor>
     <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster>
     <lastBuildDate>Sat, 07 Mar 2026 21:16:28 +0800</lastBuildDate>
-    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lemyx.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs</title>
-      <link>/categories/emacs/</link>
+      <link>https://lemyx.github.io/categories/emacs/</link>
       <pubDate>Sat, 07 Mar 2026 18:28:00 +0800</pubDate><author>dyi.shiou@gmail.com (lemyx)</author>
-      <guid>/categories/emacs/</guid>
+      <guid>https://lemyx.github.io/categories/emacs/</guid>
       <description></description>
     </item>
     <item>
       <title>机器学习</title>
-      <link>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <link>https://lemyx.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Sun, 28 Jul 2024 00:00:00 +0800</pubDate><author>dyi.shiou@gmail.com (lemyx)</author>
-      <guid>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>https://lemyx.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
   </channel>

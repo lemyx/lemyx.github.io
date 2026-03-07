@@ -1,28 +1,84 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on </title>
-    <link>/posts/</link>
-    <description>Recent content in Posts on </description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <managingEditor>dyi.shiou@gmail.com (lemyx)</managingEditor>
-    <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster>
-    <lastBuildDate>Sat, 07 Mar 2026 21:16:28 +0800</lastBuildDate>
-    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>基于 ox-hugo 创建博客</title>
-      <link>/posts/2026/%E5%9F%BA%E4%BA%8E-ox-hugo-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Sat, 07 Mar 2026 18:28:00 +0800</pubDate><author>dyi.shiou@gmail.com (lemyx)</author>
-      <guid>/posts/2026/%E5%9F%BA%E4%BA%8E-ox-hugo-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>&lt;h2 id=&#34;emacs-loveit-blog&#34;&gt;Emacs LoveIt Blog&lt;/h2&gt;&#xA;&lt;p&gt;一直有开一个博客的打算。在 2026 年初，愈发感受到 Claude Code 和 OpenClaw 等工具的强大，觉得是时候将自己身处时代洪流的探索与思考记录下来了。&lt;/p&gt;&#xA;&lt;p&gt;作为 Emacs 用户，也曾对基于 org-mode 等 pure Emacs 的方式如 &lt;a href=&#34;https://github.com/bastibe/org-static-blog&#34;&gt;bastibe/org-static-blog&lt;/a&gt; 等执迷。而今受到 &lt;a href=&#34;https://wowow005.github.io/posts/2024/06/20240622t162005--%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-hugo-%E5%92%8C-org-mode-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2__emacs_git_org_web/&#34;&gt;如何使用 hugo 和 org-mode 搭建个人博客&lt;/a&gt; 的启发，抛却了对“原汁原味”的执念，认为文中所提到的基于 ox-hugo 创建博客的技术选型足够优雅了。&lt;/p&gt;&#xA;&lt;p&gt;试图咨询 claude code 找到一个活跃开发且文档详实的 Hugo 主题，很荣幸的找到了中文社区开发的 &lt;a href=&#34;https://hugoloveit.com/zh-cn/&#34;&gt;LoveIt&lt;/a&gt; 主题，就是他了。&lt;/p&gt;&#xA;&lt;p&gt;在这个激荡的年代，我愿与文明共岁月。&lt;/p&gt;&#xA;&lt;h2 id=&#34;设置-github-actions&#34;&gt;设置 GitHub Actions&lt;/h2&gt;&#xA;&lt;p&gt;借助 github.io 可以实现静态网站的托管。同时可以将整个博客项目做 git 管理，部署由 GitHub CI 自动构建并推送到 Pages 仓库。&lt;/p&gt;&#xA;&lt;p&gt;更重要的是，博客项目仓库可以保持 private 性质，只需将 Pages 仓库设置为 public 即可。&lt;/p&gt;&#xA;&lt;p&gt;在博客项目下创建 &lt;code&gt;.github/workflows/deploy.yml&lt;/code&gt; 文件, 内容如下:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Deploy Hugo&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;branches&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;main]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;jobs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;deploy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;runs-on&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ubuntu-latest&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;steps&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;uses&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;actions/checkout@v4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Setup Hugo&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;uses&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;peaceiris/actions-hugo@v3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;with&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;hugo-version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;latest&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Build&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;hugo --minify&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Deploy to GitHub Pages&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;uses&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;peaceiris/actions-gh-pages@v4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;with&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;personal_token&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;${{ secrets.DEPLOY_TOKEN }}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;external_repository&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;lemyx/lemyx.github.io&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;publish_branch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;publish_dir&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;./public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;后续步骤:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>双路4090装机方案</title>
-      <link>/posts/2026/%E5%8F%8C%E8%B7%AF4090%E8%A3%85%E6%9C%BA%E6%96%B9%E6%A1%88/</link>
-      <pubDate>Sun, 28 Jul 2024 00:00:00 +0800</pubDate><author>dyi.shiou@gmail.com (lemyx)</author>
-      <guid>/posts/2026/%E5%8F%8C%E8%B7%AF4090%E8%A3%85%E6%9C%BA%E6%96%B9%E6%A1%88/</guid>
-      <description>&lt;h2 id=&#34;硬件篇&#34;&gt;硬件篇&lt;/h2&gt;&#xA;&lt;h3 id=&#34;硬件清单&#34;&gt;硬件清单&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;DEVICE&lt;/th&gt;&#xA;          &lt;th&gt;TYPE&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;主板&lt;/td&gt;&#xA;          &lt;td&gt;MSI MPG X670E CARBON WIFI&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;CPU&lt;/td&gt;&#xA;          &lt;td&gt;AMD R9 7900X3D&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;CPU 散热器&lt;/td&gt;&#xA;          &lt;td&gt;NOCTUA NH-D15&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;电源&lt;/td&gt;&#xA;          &lt;td&gt;Seasonic Titanium TX1600W&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;内存&lt;/td&gt;&#xA;          &lt;td&gt;Kingston FURY DDR5 6000 32G x2&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;固态硬盘&lt;/td&gt;&#xA;          &lt;td&gt;SAMSUNG 980 PRO 2TB / SN810 512GB&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;机械硬盘&lt;/td&gt;&#xA;          &lt;td&gt;WD40EJRX 4TB / WD43PURZ 4TB&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;机箱&lt;/td&gt;&#xA;          &lt;td&gt;PHANTEKS ENTHOO PRO II Server Edition&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;机箱风扇&lt;/td&gt;&#xA;          &lt;td&gt;Thermalright TL-B14B EXTREM, TL-B12, TL-C12 pro&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;显卡&lt;/td&gt;&#xA;          &lt;td&gt;MSI X TRIO 24G x2&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;显卡延长线&lt;/td&gt;&#xA;          &lt;td&gt;京兆信息PCIe4.0显卡延长线&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;注意事项&#34;&gt;注意事项&lt;/h3&gt;&#xA;&lt;h4 id=&#34;越薄的显卡越好&#34;&gt;越薄的显卡越好&lt;/h4&gt;&#xA;&lt;p&gt;RTX4090 这一代显卡据称差距并不大, 从安装的难易度角度考虑, 买薄款型号更容易在一款机箱中塞下两张显卡。&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - </title>
+        <link>https://lemyx.github.io/posts/</link>
+        <description>所有文章 | </description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dyi.shiou@gmail.com (lemyx)</managingEditor>
+            <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster><lastBuildDate>Sat, 07 Mar 2026 18:28:00 &#43;0800</lastBuildDate><atom:link href="https://lemyx.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>基于 ox-hugo 创建博客</title>
+    <link>https://lemyx.github.io/posts/2026/%E5%9F%BA%E4%BA%8E-ox-hugo-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+    <pubDate>Sat, 07 Mar 2026 18:28:00 &#43;0800</pubDate>
+    <author>dyi.shiou@gmail.com (lemyx)</author>
+    <guid>https://lemyx.github.io/posts/2026/%E5%9F%BA%E4%BA%8E-ox-hugo-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+    <description><![CDATA[<h2 id="emacs-loveit-blog">Emacs LoveIt Blog</h2>
+<p>一直有开一个博客的打算。在 2026 年初，愈发感受到 Claude Code 和 OpenClaw 等工具的强大，觉得是时候将自己身处时代洪流的探索与思考记录下来了。</p>
+<p>作为 Emacs 用户，也曾对基于 org-mode 等 pure Emacs 的方式如 <a href="https://github.com/bastibe/org-static-blog" target="_blank" rel="noopener noreffer ">bastibe/org-static-blog</a> 等执迷。而今受到 <a href="https://wowow005.github.io/posts/2024/06/20240622t162005--%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-hugo-%E5%92%8C-org-mode-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2__emacs_git_org_web/" target="_blank" rel="noopener noreffer ">如何使用 hugo 和 org-mode 搭建个人博客</a> 的启发，抛却了对“原汁原味”的执念，认为文中所提到的基于 ox-hugo 创建博客的技术选型足够优雅了。</p>]]></description>
+</item>
+<item>
+    <title>双路4090装机方案</title>
+    <link>https://lemyx.github.io/posts/2026/%E5%8F%8C%E8%B7%AF4090%E8%A3%85%E6%9C%BA%E6%96%B9%E6%A1%88/</link>
+    <pubDate>Sun, 28 Jul 2024 00:00:00 &#43;0800</pubDate>
+    <author>dyi.shiou@gmail.com (lemyx)</author>
+    <guid>https://lemyx.github.io/posts/2026/%E5%8F%8C%E8%B7%AF4090%E8%A3%85%E6%9C%BA%E6%96%B9%E6%A1%88/</guid>
+    <description><![CDATA[<h2 id="硬件篇">硬件篇</h2>
+<h3 id="硬件清单">硬件清单</h3>
+<table>
+  <thead>
+      <tr>
+          <th>DEVICE</th>
+          <th>TYPE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>主板</td>
+          <td>MSI MPG X670E CARBON WIFI</td>
+      </tr>
+      <tr>
+          <td>CPU</td>
+          <td>AMD R9 7900X3D</td>
+      </tr>
+      <tr>
+          <td>CPU 散热器</td>
+          <td>NOCTUA NH-D15</td>
+      </tr>
+      <tr>
+          <td>电源</td>
+          <td>Seasonic Titanium TX1600W</td>
+      </tr>
+      <tr>
+          <td>内存</td>
+          <td>Kingston FURY DDR5 6000 32G x2</td>
+      </tr>
+      <tr>
+          <td>固态硬盘</td>
+          <td>SAMSUNG 980 PRO 2TB / SN810 512GB</td>
+      </tr>
+      <tr>
+          <td>机械硬盘</td>
+          <td>WD40EJRX 4TB / WD43PURZ 4TB</td>
+      </tr>
+      <tr>
+          <td>机箱</td>
+          <td>PHANTEKS ENTHOO PRO II Server Edition</td>
+      </tr>
+      <tr>
+          <td>机箱风扇</td>
+          <td>Thermalright TL-B14B EXTREM, TL-B12, TL-C12 pro</td>
+      </tr>
+      <tr>
+          <td>显卡</td>
+          <td>MSI X TRIO 24G x2</td>
+      </tr>
+      <tr>
+          <td>显卡延长线</td>
+          <td>京兆信息PCIe4.0显卡延长线</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="注意事项">注意事项</h3>
+<h4 id="越薄的显卡越好">越薄的显卡越好</h4>
+<p>RTX4090 这一代显卡据称差距并不大, 从安装的难易度角度考虑, 买薄款型号更容易在一款机箱中塞下两张显卡。</p>]]></description>
+</item>
+</channel>
 </rss>

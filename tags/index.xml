@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
-    <link>/tags/</link>
+    <link>https://lemyx.github.io/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <managingEditor>dyi.shiou@gmail.com (lemyx)</managingEditor>
     <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster>
     <lastBuildDate>Sat, 07 Mar 2026 21:16:28 +0800</lastBuildDate>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lemyx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs</title>
-      <link>/tags/emacs/</link>
+      <link>https://lemyx.github.io/tags/emacs/</link>
       <pubDate>Sat, 07 Mar 2026 18:28:00 +0800</pubDate><author>dyi.shiou@gmail.com (lemyx)</author>
-      <guid>/tags/emacs/</guid>
+      <guid>https://lemyx.github.io/tags/emacs/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>/tags/hugo/</link>
+      <link>https://lemyx.github.io/tags/hugo/</link>
       <pubDate>Sat, 07 Mar 2026 18:28:00 +0800</pubDate><author>dyi.shiou@gmail.com (lemyx)</author>
-      <guid>/tags/hugo/</guid>
+      <guid>https://lemyx.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Org-Mode</title>
-      <link>/tags/org-mode/</link>
+      <link>https://lemyx.github.io/tags/org-mode/</link>
       <pubDate>Sat, 07 Mar 2026 18:28:00 +0800</pubDate><author>dyi.shiou@gmail.com (lemyx)</author>
-      <guid>/tags/org-mode/</guid>
+      <guid>https://lemyx.github.io/tags/org-mode/</guid>
       <description></description>
     </item>
     <item>
       <title>装机</title>
-      <link>/tags/%E8%A3%85%E6%9C%BA/</link>
+      <link>https://lemyx.github.io/tags/%E8%A3%85%E6%9C%BA/</link>
       <pubDate>Sun, 28 Jul 2024 00:00:00 +0800</pubDate><author>dyi.shiou@gmail.com (lemyx)</author>
-      <guid>/tags/%E8%A3%85%E6%9C%BA/</guid>
+      <guid>https://lemyx.github.io/tags/%E8%A3%85%E6%9C%BA/</guid>
       <description></description>
     </item>
   </channel>
