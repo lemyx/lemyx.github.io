@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>配置kitty - </title><meta name="Description" content="This is my cool site"><meta property="og:url" content="https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/">
+  <meta property="og:site_name" content="My cool site">
+  <meta property="og:title" content="配置kitty">
+  <meta property="og:description" content="从 Claude Code 说起 Anthropic 开发的 Claude Code 不仅在 Agentic Coding 领域表现卓著，也在 法律 等领域表现出通用潜力。
+Claude Code 是作为 CLI 工具呈现的，正如 Emacs-China 一则讨论 所说，这一形态或与 Emacs 颇有渊源。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-08T08:07:00+08:00">
+    <meta property="article:modified_time" content="2026-03-08T14:25:59+08:00">
+    <meta property="article:tag" content="Emacs">
+    <meta property="article:tag" content="Claude-Code">
+    <meta property="article:tag" content="Kitty">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="配置kitty">
+  <meta name="twitter:description" content="从 Claude Code 说起 Anthropic 开发的 Claude Code 不仅在 Agentic Coding 领域表现卓著，也在 法律 等领域表现出通用潜力。
+Claude Code 是作为 CLI 工具呈现的，正如 Emacs-China 一则讨论 所说，这一形态或与 Emacs 颇有渊源。">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/" /><link rel="prev" href="https://lemyx.github.io/posts/2026/%E5%9F%BA%E4%BA%8E-ox-hugo-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "配置kitty",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/lemyx.github.io\/posts\/2026\/%E9%85%8D%E7%BD%AEkitty\/"
+        },"genre": "posts","keywords": "Emacs, claude-code, kitty","wordcount":  498 ,
+        "url": "https:\/\/lemyx.github.io\/posts\/2026\/%E9%85%8D%E7%BD%AEkitty\/","datePublished": "2026-03-08T08:07:00+08:00","dateModified": "2026-03-08T14:25:59+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "lemyx"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">一方天地</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">一方天地</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">配置kitty</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>lemyx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/claude/"><i class="far fa-folder" aria-hidden="true"></i>Claude</a>&nbsp;<a href="/categories/code/"><i class="far fa-folder" aria-hidden="true"></i>Code</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-03-08">2026-03-08</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;约 498 字&nbsp;
+                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#从-claude-code-说起">从 Claude Code 说起</a></li>
+    <li><a href="#配置-kitty">配置 kitty</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="从-claude-code-说起">从 Claude Code 说起</h2>
+<p><a href="https://www.anthropic.com/" target="_blank" rel="noopener noreffer ">Anthropic</a> 开发的 <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener noreffer ">Claude Code</a> 不仅在 <a href="https://www.anthropic.com/engineering" target="_blank" rel="noopener noreffer ">Agentic Coding</a> 领域表现卓著，也在 <a href="https://mp.weixin.qq.com/s/-o0wkt6VTXIs9l0puacp0w" target="_blank" rel="noopener noreffer ">法律</a> 等领域表现出通用潜力。</p>
+<p>Claude Code 是作为 CLI 工具呈现的，正如 <a href="https://emacs-china.org/t/ai-cursor-emacs/29760/9" target="_blank" rel="noopener noreffer ">Emacs-China 一则讨论</a> 所说，这一形态或与 Emacs 颇有渊源。</p>
+<blockquote>
+<p>Claude Code 官方演讲里说：当时把 Claude Code 做成 CLI 以及提供 SDK 而没有做成 Cursor，就是因为 Anthropic 有人用 Emacs 等编辑器 :joy:。</p>
+</blockquote>
+<p>Emacser 从未停止将好用的工具集成到 Emacs 这个伪装成编辑器的操作系统里。对于 Claude Code 而言，已有 <a href="https://github.com/stevemolitor/claude-code.el" target="_blank" rel="noopener noreffer ">claude-code.el</a>, <a href="https://github.com/manzaltu/claude-code-ide.el" target="_blank" rel="noopener noreffer ">claude-code-ide.el</a>, <a href="https://github.com/xenodium/agent-shell" target="_blank" rel="noopener noreffer ">agent-shell</a> 等好用的插件。然而，一方面 GUI Emacs 使用 vterm 或 eat 作为内置终端来使用 Claude Code 都存在着或多或少的渲染问题。另一方面，Claude Code 不断演化新特性，个人开发者难以跟上 Anthropic 团队的步调。</p>
+<p>因此，个人判断，在终端中使用原生 Claude Code 是最好的选择。相应地，Emacs 也可以从 GUI 环境切换到 TUI 环境下。为此需要选择一个好用的终端。Emacs-China 上关于<a href="https://sw.kovidgoyal.net/kitty/" target="_blank" rel="noopener noreffer "> kitty</a> 的 <a href="https://emacs-china.org/search?q=kitty" target="_blank" rel="noopener noreffer ">讨论</a> 很多，看起来值得一试。</p>
+<blockquote>
+<p>If you live in the terminal, kitty is made for YOU!</p>
+<p>The fast, feature-rich, GPU based terminal emulator.</p>
+</blockquote>
+<h2 id="配置-kitty">配置 kitty</h2>
+<p>安装好  后，可以参考 <a href="https://sw.kovidgoyal.net/kitty/conf/" target="_blank" rel="noopener noreffer ">sw.kovidgoyal.net/kitty/conf</a> 完成对 kitty 的定制。</p>
+<table>
+  <thead>
+      <tr>
+          <th>Function</th>
+          <th>Command</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Installation</td>
+          <td><code>brew install --cask kitty</code></td>
+      </tr>
+      <tr>
+          <td>Reload</td>
+          <td><code>Cmd+Ctrl+,</code></td>
+      </tr>
+      <tr>
+          <td>Theme</td>
+          <td><code>kitty +kitten themes</code></td>
+      </tr>
+      <tr>
+          <td>Font</td>
+          <td><code>kitty +kitten choose_fonts</code></td>
+      </tr>
+      <tr>
+          <td>Tab</td>
+          <td><code>Cmd+Tab</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>使用 <code>awk '!/^\s*(#|$)/' ~/.config/kitty/kitty.conf</code> 命令可以打印 kitty 配置文件中的生效部分。</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-cfg">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cfg" data-lang="cfg"><span class="line"><span class="cl"><span class="na">font_size 15.0</span>
+</span></span><span class="line"><span class="cl"><span class="na">cursor_shape beam</span>
+</span></span><span class="line"><span class="cl"><span class="na">copy_on_select yes</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 配合 kkp.el 实现 option 到 meta 的映射</span>
+</span></span><span class="line"><span class="cl"><span class="na">macos_option_as_alt yes</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 支持 TUI Emacs 中 Ctrl-Delete 实现向左删除一个词</span>
+</span></span><span class="line"><span class="cl"><span class="na">map ctrl+backspace send_text all \x1b\x7f</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 支持 C-l 将当前行置顶</span>
+</span></span><span class="line"><span class="cl"><span class="na">map ctrl+l scroll_prompt_to_top</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Modus Operandi Tinted</span>
+</span></span><span class="line"><span class="cl"><span class="na">include current-theme.conf</span>
+</span></span><span class="line"><span class="cl"><span class="na">font_family      family</span><span class="o">=</span><span class="s">&#34;Sarasa Term SC Nerd&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="na">bold_font        auto</span>
+</span></span><span class="line"><span class="cl"><span class="na">italic_font      auto</span>
+</span></span><span class="line"><span class="cl"><span class="na">bold_italic_font auto</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># jelly cursor animation</span>
+</span></span><span class="line"><span class="cl"><span class="na">cursor_trail 1</span></span></span></code></pre></div></div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-03-08</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 X" data-sharer="x" data-url="https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/" data-title="配置kitty" data-hashtags="Emacs,claude-code,kitty"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Threads" data-sharer="threads" data-url="https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/" data-title="配置kitty"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/" data-hashtag="Emacs"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/" data-title="配置kitty"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/" data-title="配置kitty"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@16.9.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/" data-title="配置kitty"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Diaspora" data-sharer="diaspora" data-url="https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/" data-title="配置kitty" data-description=""><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=https%3a%2f%2flemyx.github.io%2fposts%2f2026%2f%25E9%2585%258D%25E7%25BD%25AEkitty%2f&amp;text=%e9%85%8d%e7%bd%aekitty" target="_blank" title="分享到 Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags" aria-hidden="true"></i>&nbsp;<a href="/tags/emacs/">Emacs</a>,&nbsp;<a href="/tags/claude-code/">Claude-Code</a>,&nbsp;<a href="/tags/kitty/">Kitty</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2026/%E5%9F%BA%E4%BA%8E-ox-hugo-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="prev" rel="prev" title="基于 ox-hugo 创建博客"><i class="fas fa-angle-left" aria-hidden="true"></i>基于 ox-hugo 创建博客</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.157.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">lemyx</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment" aria-hidden="true"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script><script>window.config={"comment":{}};</script><script src="/js/theme.min.js"></script></body>
+</html>

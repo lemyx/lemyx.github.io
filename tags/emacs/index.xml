@@ -4,7 +4,17 @@
         <link>https://lemyx.github.io/tags/emacs/</link>
         <description>Emacs - 标签 - </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dyi.shiou@gmail.com (lemyx)</managingEditor>
-            <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster><lastBuildDate>Sat, 07 Mar 2026 18:28:00 &#43;0800</lastBuildDate><atom:link href="https://lemyx.github.io/tags/emacs/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster><lastBuildDate>Sun, 08 Mar 2026 08:07:00 &#43;0800</lastBuildDate><atom:link href="https://lemyx.github.io/tags/emacs/" rel="self" type="application/rss+xml" /><item>
+    <title>配置kitty</title>
+    <link>https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/</link>
+    <pubDate>Sun, 08 Mar 2026 08:07:00 &#43;0800</pubDate>
+    <author>dyi.shiou@gmail.com (lemyx)</author>
+    <guid>https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/</guid>
+    <description><![CDATA[<h2 id="从-claude-code-说起">从 Claude Code 说起</h2>
+<p><a href="https://www.anthropic.com/" target="_blank" rel="noopener noreffer ">Anthropic</a> 开发的 <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener noreffer ">Claude Code</a> 不仅在 <a href="https://www.anthropic.com/engineering" target="_blank" rel="noopener noreffer ">Agentic Coding</a> 领域表现卓著，也在 <a href="https://mp.weixin.qq.com/s/-o0wkt6VTXIs9l0puacp0w" target="_blank" rel="noopener noreffer ">法律</a> 等领域表现出通用潜力。</p>
+<p>Claude Code 是作为 CLI 工具呈现的，正如 <a href="https://emacs-china.org/t/ai-cursor-emacs/29760/9" target="_blank" rel="noopener noreffer ">Emacs-China 一则讨论</a> 所说，这一形态或与 Emacs 颇有渊源。</p>]]></description>
+</item>
+<item>
     <title>基于 ox-hugo 创建博客</title>
     <link>https://lemyx.github.io/posts/2026/%E5%9F%BA%E4%BA%8E-ox-hugo-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
     <pubDate>Sat, 07 Mar 2026 18:28:00 &#43;0800</pubDate>
