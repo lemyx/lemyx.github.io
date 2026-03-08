@@ -2,16 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://lemyx.github.io/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
-            <loc>https://lemyx.github.io/categories/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
-            <loc>https://lemyx.github.io/categories/claude/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
-            <loc>https://lemyx.github.io/tags/claude-code/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
-            <loc>https://lemyx.github.io/categories/code/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
-            <loc>https://lemyx.github.io/tags/emacs/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
-            <loc>https://lemyx.github.io/tags/kitty/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
-            <loc>https://lemyx.github.io/posts/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
-            <loc>https://lemyx.github.io/tags/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
-            <loc>https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/</loc><lastmod>2026-03-08T14:25:59&#43;08:00</lastmod></url><url>
+            <loc>https://lemyx.github.io/</loc><lastmod>2026-03-08T14:55:06&#43;08:00</lastmod></url><url>
+            <loc>https://lemyx.github.io/categories/ai/</loc><lastmod>2026-03-08T14:55:06&#43;08:00</lastmod></url><url>
+            <loc>https://lemyx.github.io/categories/</loc><lastmod>2026-03-08T14:55:06&#43;08:00</lastmod></url><url>
+            <loc>https://lemyx.github.io/tags/claude-code/</loc><lastmod>2026-03-08T14:55:06&#43;08:00</lastmod></url><url>
+            <loc>https://lemyx.github.io/tags/emacs/</loc><lastmod>2026-03-08T14:55:06&#43;08:00</lastmod></url><url>
+            <loc>https://lemyx.github.io/tags/kitty/</loc><lastmod>2026-03-08T14:55:06&#43;08:00</lastmod></url><url>
+            <loc>https://lemyx.github.io/posts/</loc><lastmod>2026-03-08T14:55:06&#43;08:00</lastmod></url><url>
+            <loc>https://lemyx.github.io/tags/</loc><lastmod>2026-03-08T14:55:06&#43;08:00</lastmod></url><url>
+            <loc>https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/</loc><lastmod>2026-03-08T14:55:06&#43;08:00</lastmod></url><url>
             <loc>https://lemyx.github.io/categories/emacs/</loc><lastmod>2026-03-08T07:03:30&#43;08:00</lastmod></url><url>
             <loc>https://lemyx.github.io/tags/hugo/</loc><lastmod>2026-03-08T07:03:30&#43;08:00</lastmod></url><url>
             <loc>https://lemyx.github.io/tags/org-mode/</loc><lastmod>2026-03-08T07:03:30&#43;08:00</lastmod></url><url>
