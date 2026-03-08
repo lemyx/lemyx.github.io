@@ -13,7 +13,7 @@ Claude Code 是作为 CLI 工具呈现的，正如 Emacs-China 一则讨论 所�
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-03-08T08:07:00+08:00">
-    <meta property="article:modified_time" content="2026-03-08T17:01:28+08:00">
+    <meta property="article:modified_time" content="2026-03-08T20:12:32+08:00">
     <meta property="article:tag" content="Emacs">
     <meta property="article:tag" content="Claude-Code">
     <meta property="article:tag" content="Kitty">
@@ -37,8 +37,8 @@ Claude Code 是作为 CLI 工具呈现的，正如 Emacs-China 一则讨论 所�
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/lemyx.github.io\/posts\/2026\/%E9%85%8D%E7%BD%AEkitty\/"
-        },"genre": "posts","keywords": "Emacs, claude-code, kitty","wordcount":  514 ,
-        "url": "https:\/\/lemyx.github.io\/posts\/2026\/%E9%85%8D%E7%BD%AEkitty\/","datePublished": "2026-03-08T08:07:00+08:00","dateModified": "2026-03-08T17:01:28+08:00","publisher": {
+        },"genre": "posts","keywords": "Emacs, claude-code, kitty","wordcount":  600 ,
+        "url": "https:\/\/lemyx.github.io\/posts\/2026\/%E9%85%8D%E7%BD%AEkitty\/","datePublished": "2026-03-08T08:07:00+08:00","dateModified": "2026-03-08T20:12:32+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -90,7 +90,7 @@ Claude Code 是作为 CLI 工具呈现的，正如 Emacs-China 一则讨论 所�
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">配置kitty</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>lemyx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ai/"><i class="far fa-folder" aria-hidden="true"></i>AI</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-03-08">2026-03-08</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;约 514 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-03-08">2026-03-08</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;约 600 字&nbsp;
                 <i class="far fa-clock" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -101,6 +101,7 @@ Claude Code 是作为 CLI 工具呈现的，正如 Emacs-China 一则讨论 所�
   <ul>
     <li><a href="#从-claude-code-说起">从 Claude Code 说起</a></li>
     <li><a href="#配置-kitty">配置 kitty</a></li>
+    <li><a href="#kitty-cheet-sheet">kitty Cheet Sheet</a></li>
     <li><a href="#kitty-实用工具">kitty 实用工具</a></li>
   </ul>
 </nav></div>
@@ -117,7 +118,40 @@ Claude Code 是作为 CLI 工具呈现的，正如 Emacs-China 一则讨论 所�
 <p>The fast, feature-rich, GPU based terminal emulator.</p>
 </blockquote>
 <h2 id="配置-kitty">配置 kitty</h2>
-<p>完成安装后，可以参考 <a href="https://sw.kovidgoyal.net/kitty/conf/" target="_blank" rel="noopener noreffer ">sw.kovidgoyal.net/kitty/conf</a> 进行配置。</p>
+<p>使用命令 <code>brew install --cask kitty</code> 即可安装 kitty 。安装完毕后可参考 <a href="https://sw.kovidgoyal.net/kitty/conf/" target="_blank" rel="noopener noreffer ">sw.kovidgoyal.net/kitty/conf</a> 进行配置。</p>
+<p>使用 <code>awk '!/^\s*(#|$)/' ~/.config/kitty/kitty.conf</code> 命令可以打印 kitty 配置文件中的生效部分。</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-cfg">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cfg" data-lang="cfg"><span class="line"><span class="cl"><span class="na">cursor_shape beam</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># jelly cursor animation</span>
+</span></span><span class="line"><span class="cl"><span class="na">cursor_trail 1</span>
+</span></span><span class="line"><span class="cl"><span class="na">copy_on_select yes</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 配合 kkp.el 实现 option 到 meta 的映射</span>
+</span></span><span class="line"><span class="cl"><span class="na">macos_option_as_alt yes</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 支持 TUI Emacs 中 Ctrl-Delete 实现向左删除一个词</span>
+</span></span><span class="line"><span class="cl"><span class="na">map ctrl+backspace send_text all \x1b\x7f</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 支持 C-l 将当前行置顶</span>
+</span></span><span class="line"><span class="cl"><span class="na">map ctrl+l scroll_prompt_to_top</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Modus Operandi Tinted</span>
+</span></span><span class="line"><span class="cl"><span class="na">include current-theme.conf</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置主字体为 Sarasa Term SC Nerd</span>
+</span></span><span class="line"><span class="cl"><span class="na">font_family      family</span><span class="o">=</span><span class="s">&#34;Sarasa Term SC Nerd&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="na">font_size        15.0</span>
+</span></span><span class="line"><span class="cl"><span class="na">bold_font        auto</span>
+</span></span><span class="line"><span class="cl"><span class="na">italic_font      auto</span>
+</span></span><span class="line"><span class="cl"><span class="na">bold_italic_font auto</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用 JuliaMono 渲染特殊ui符号</span>
+</span></span><span class="line"><span class="cl"><span class="na">symbol_map U+2500-U+259F,U+25A0-U+25FF,U+2800-U+28FF JuliaMono</span>
+</span></span><span class="line"><span class="cl"><span class="na">enabled_layouts splits, stack</span>
+</span></span><span class="line"><span class="cl"><span class="na">allow_remote_control yes</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动 claude code</span>
+</span></span><span class="line"><span class="cl"><span class="na">map ctrl+shift+c launch --location</span><span class="o">=</span><span class="s">vsplit --bias=25 zsh -l -c &#34;mc --code&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 在当前布局 splits 和全屏布局 stack 之间切换</span>
+</span></span><span class="line"><span class="cl"><span class="na">map super+z toggle_layout stack</span></span></span></code></pre></div></div>
+<h2 id="kitty-cheet-sheet">kitty Cheet Sheet</h2>
 <table>
   <thead>
       <tr>
@@ -126,10 +160,6 @@ Claude Code 是作为 CLI 工具呈现的，正如 Emacs-China 一则讨论 所�
       </tr>
   </thead>
   <tbody>
-      <tr>
-          <td>Installation</td>
-          <td><code>brew install --cask kitty</code></td>
-      </tr>
       <tr>
           <td>Reload</td>
           <td><code>Cmd+Ctrl+,</code></td>
@@ -144,33 +174,22 @@ Claude Code 是作为 CLI 工具呈现的，正如 Emacs-China 一则讨论 所�
       </tr>
       <tr>
           <td>Tab</td>
-          <td><code>Cmd+Tab</code></td>
+          <td><code>Cmd+t</code></td>
+      </tr>
+      <tr>
+          <td>Switch Tab</td>
+          <td><code>Ctrl+Shift+Left/Right</code></td>
+      </tr>
+      <tr>
+          <td>Switch Pane</td>
+          <td><code>Ctrl+Shift+]/[</code></td>
+      </tr>
+      <tr>
+          <td>Close Pane</td>
+          <td><code>Ctrl+Shift+w</code></td>
       </tr>
   </tbody>
 </table>
-<p>使用 <code>awk '!/^\s*(#|$)/' ~/.config/kitty/kitty.conf</code> 命令可以打印 kitty 配置文件中的生效部分。</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-cfg">
-        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cfg" data-lang="cfg"><span class="line"><span class="cl"><span class="na">font_size 15.0</span>
-</span></span><span class="line"><span class="cl"><span class="na">cursor_shape beam</span>
-</span></span><span class="line"><span class="cl"><span class="na">copy_on_select yes</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 配合 kkp.el 实现 option 到 meta 的映射</span>
-</span></span><span class="line"><span class="cl"><span class="na">macos_option_as_alt yes</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 支持 TUI Emacs 中 Ctrl-Delete 实现向左删除一个词</span>
-</span></span><span class="line"><span class="cl"><span class="na">map ctrl+backspace send_text all \x1b\x7f</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 支持 C-l 将当前行置顶</span>
-</span></span><span class="line"><span class="cl"><span class="na">map ctrl+l scroll_prompt_to_top</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Modus Operandi Tinted</span>
-</span></span><span class="line"><span class="cl"><span class="na">include current-theme.conf</span>
-</span></span><span class="line"><span class="cl"><span class="na">font_family      family</span><span class="o">=</span><span class="s">&#34;Sarasa Term SC Nerd&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="na">bold_font        auto</span>
-</span></span><span class="line"><span class="cl"><span class="na">italic_font      auto</span>
-</span></span><span class="line"><span class="cl"><span class="na">bold_italic_font auto</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># jelly cursor animation</span>
-</span></span><span class="line"><span class="cl"><span class="na">cursor_trail 1</span></span></span></code></pre></div></div>
 <h2 id="kitty-实用工具">kitty 实用工具</h2>
 <table>
   <thead>
