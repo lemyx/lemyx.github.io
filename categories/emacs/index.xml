@@ -4,7 +4,16 @@
         <link>https://lemyx.github.io/categories/emacs/</link>
         <description>Emacs - 分类 - </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dyi.shiou@gmail.com (lemyx)</managingEditor>
-            <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster><lastBuildDate>Sat, 07 Mar 2026 18:28:00 &#43;0800</lastBuildDate><atom:link href="https://lemyx.github.io/categories/emacs/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster><lastBuildDate>Tue, 10 Mar 2026 20:06:00 &#43;0800</lastBuildDate><atom:link href="https://lemyx.github.io/categories/emacs/" rel="self" type="application/rss+xml" /><item>
+    <title>synctex in TUI Emacs</title>
+    <link>https://lemyx.github.io/posts/2026/synctex-in-tui-emacs/</link>
+    <pubDate>Tue, 10 Mar 2026 20:06:00 &#43;0800</pubDate>
+    <author>dyi.shiou@gmail.com (lemyx)</author>
+    <guid>https://lemyx.github.io/posts/2026/synctex-in-tui-emacs/</guid>
+    <description><![CDATA[<h2 id="在-tui-emacs-中浏览-latex-片段">在 TUI Emacs 中浏览 LaTeX 片段</h2>
+<p>对于概念验证等用途的日志或 wiki 而言，Emacser 往往会拥抱轻量而有特色的 <a href="https://orgmode.org/" target="_blank" rel="noopener noreffer ">org</a> 文件。由于 org-mode 的强大功能，即使是 LaTeX 最擅长的数学环境，org-mode 也可以提供一定的支持。</p>]]></description>
+</item>
+<item>
     <title>基于 ox-hugo 创建博客</title>
     <link>https://lemyx.github.io/posts/2026/%E5%9F%BA%E4%BA%8E-ox-hugo-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
     <pubDate>Sat, 07 Mar 2026 18:28:00 &#43;0800</pubDate>

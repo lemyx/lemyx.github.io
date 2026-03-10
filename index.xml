@@ -4,9 +4,18 @@
         <link>https://lemyx.github.io/</link>
         <description>This is my cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dyi.shiou@gmail.com (lemyx)</managingEditor>
-            <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster><lastBuildDate>Sun, 08 Mar 2026 08:07:00 &#43;0800</lastBuildDate>
+            <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster><lastBuildDate>Tue, 10 Mar 2026 20:06:00 &#43;0800</lastBuildDate>
             <atom:link href="https://lemyx.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>synctex in TUI Emacs</title>
+    <link>https://lemyx.github.io/posts/2026/synctex-in-tui-emacs/</link>
+    <pubDate>Tue, 10 Mar 2026 20:06:00 &#43;0800</pubDate>
+    <author>dyi.shiou@gmail.com (lemyx)</author>
+    <guid>https://lemyx.github.io/posts/2026/synctex-in-tui-emacs/</guid>
+    <description><![CDATA[<h2 id="在-tui-emacs-中浏览-latex-片段">在 TUI Emacs 中浏览 LaTeX 片段</h2>
+<p>对于概念验证等用途的日志或 wiki 而言，Emacser 往往会拥抱轻量而有特色的 <a href="https://orgmode.org/" target="_blank" rel="noopener noreffer ">org</a> 文件。由于 org-mode 的强大功能，即使是 LaTeX 最擅长的数学环境，org-mode 也可以提供一定的支持。</p>]]></description>
+</item>
+<item>
     <title>配置kitty</title>
     <link>https://lemyx.github.io/posts/2026/%E9%85%8D%E7%BD%AEkitty/</link>
     <pubDate>Sun, 08 Mar 2026 08:07:00 &#43;0800</pubDate>
