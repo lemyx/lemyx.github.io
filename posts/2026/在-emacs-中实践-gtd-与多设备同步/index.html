@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>在 Emacs 中实践 GTD 与多设备同步 - </title><meta name="Description" content="This is my cool site"><meta property="og:url" content="https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/">
+  <meta property="og:site_name" content="My cool site">
+  <meta property="og:title" content="在 Emacs 中实践 GTD 与多设备同步">
+  <meta property="og:description" content="为什么要在 Emacs 里做 GTD Getting Things Done（GTD）是 David Allen 提出的一套时间管理方法论，其核心思想是：把脑中所有待办事项全部&#34;清空&#34;到一个可信赖的外部系统中，然后按流程收集、厘清、组织、回顾、执行。这套方法论的价值在于，它让大脑从&#34;记住事情&#34;的负担中解脱出来，专注于&#34;做事情&#34;本身。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-13T12:00:00+08:00">
+    <meta property="article:modified_time" content="2026-03-13T12:43:43+08:00">
+    <meta property="article:tag" content="Emacs">
+    <meta property="article:tag" content="Org-Mode">
+    <meta property="article:tag" content="GTD">
+    <meta property="article:tag" content="Claude-Code">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="在 Emacs 中实践 GTD 与多设备同步">
+  <meta name="twitter:description" content="为什么要在 Emacs 里做 GTD Getting Things Done（GTD）是 David Allen 提出的一套时间管理方法论，其核心思想是：把脑中所有待办事项全部&#34;清空&#34;到一个可信赖的外部系统中，然后按流程收集、厘清、组织、回顾、执行。这套方法论的价值在于，它让大脑从&#34;记住事情&#34;的负担中解脱出来，专注于&#34;做事情&#34;本身。">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/" /><link rel="prev" href="https://lemyx.github.io/posts/2026/synctex-in-tui-emacs/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "在 Emacs 中实践 GTD 与多设备同步",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/lemyx.github.io\/posts\/2026\/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5\/"
+        },"genre": "posts","keywords": "Emacs, org-mode, GTD, claude-code","wordcount":  3867 ,
+        "url": "https:\/\/lemyx.github.io\/posts\/2026\/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5\/","datePublished": "2026-03-13T12:00:00+08:00","dateModified": "2026-03-13T12:43:43+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "lemyx"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">一方天地</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">一方天地</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">在 Emacs 中实践 GTD 与多设备同步</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>lemyx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/emacs/"><i class="far fa-folder" aria-hidden="true"></i>Emacs</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-03-13">2026-03-13</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;约 3867 字&nbsp;
+                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#为什么要在-emacs-里做-gtd">为什么要在 Emacs 里做 GTD</a></li>
+    <li><a href="#org-gtd-基础配置">org-gtd 基础配置</a></li>
+    <li><a href="#第一层-autosync-magit-实时同步">第一层：autosync-magit 实时同步</a>
+      <ul>
+        <li><a href="#通过-dot-dir-locals-dot-el-激活">通过 .dir-locals.el 激活</a></li>
+        <li><a href="#用-rebase-替代-merge">用 rebase 替代 merge</a></li>
+      </ul>
+    </li>
+    <li><a href="#第二层-safety-net-定时安全网">第二层：Safety-net 定时安全网</a>
+      <ul>
+        <li><a href="#主设备与副设备的分工">主设备与副设备的分工</a></li>
+        <li><a href="#副设备-plain-commit-plus-push">副设备：plain commit + push</a></li>
+        <li><a href="#主设备-squash-plus-force-push">主设备：squash + force-push</a></li>
+        <li><a href="#claude-code-生成-commit-message">Claude Code 生成 commit message</a></li>
+        <li><a href="#幂等性设计">幂等性设计</a></li>
+        <li><a href="#elcron-调度">elcron 调度</a></li>
+      </ul>
+    </li>
+    <li><a href="#两层联动-全局同步锁">两层联动：全局同步锁</a></li>
+    <li><a href="#备份与清理">备份与清理</a></li>
+    <li><a href="#整体架构图">整体架构图</a></li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="为什么要在-emacs-里做-gtd">为什么要在 Emacs 里做 GTD</h2>
+<p><a href="https://gettingthingsdone.com/" target="_blank" rel="noopener noreffer ">Getting Things Done</a>（GTD）是 David Allen 提出的一套时间管理方法论，其核心思想是：把脑中所有待办事项全部&quot;清空&quot;到一个可信赖的外部系统中，然后按流程收集、厘清、组织、回顾、执行。这套方法论的价值在于，它让大脑从&quot;记住事情&quot;的负担中解脱出来，专注于&quot;做事情&quot;本身。</p>
+<p>对于 Emacs 用户而言，<a href="https://orgmode.org/" target="_blank" rel="noopener noreffer ">Org Mode</a> 天然就是这个&quot;可信赖的外部系统&quot;。纯文本、可版本控制、可编程——没有什么比 <code>.org</code> 文件更让人安心了。社区中也早有成熟的 GTD 实现：<a href="https://github.com/trevoke/org-gtd.el" target="_blank" rel="noopener noreffer ">org-gtd.el</a>，它在 Org Mode 之上封装了完整的 GTD 工作流，从收集（Capture）到厘清（Clarify）再到执行（Engage），一气呵成。</p>
+<p>然而，当你的使用场景是&quot;公司一台 MacBook Pro，家里一台 Mac Mini，二者共享同一套 <code>~/.emacs.d</code> 配置&quot;时，一个关键问题浮出水面：**GTD 数据如何在两台设备之间实时同步？**</p>
+<p>我的解决方案是一套两层自动同步机制：第一层负责实时的 commit &amp; push，第二层作为安全网定时清理和兜底。整套配置写在 <code>init-gtd.el</code> 中，下面逐层展开。</p>
+<h2 id="org-gtd-基础配置">org-gtd 基础配置</h2>
+<p>首先是 <a href="https://github.com/trevoke/org-gtd.el" target="_blank" rel="noopener noreffer ">org-gtd</a> 本身的配置，这一部分比较直白：</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">org-gtd</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:after</span> <span class="nv">org</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:demand</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:custom</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-gtd-update-ack</span> <span class="s">&#34;4.0.0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-gtd-directory</span> <span class="s">&#34;~/gtd&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-todo-keywords</span> <span class="o">&#39;</span><span class="p">((</span><span class="nv">sequence</span> <span class="s">&#34;TODO&#34;</span> <span class="s">&#34;NEXT&#34;</span> <span class="s">&#34;WAIT&#34;</span> <span class="s">&#34;|&#34;</span> <span class="s">&#34;DONE&#34;</span> <span class="s">&#34;CNCL&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-gtd-keyword-mapping</span> <span class="o">&#39;</span><span class="p">((</span><span class="nv">todo</span> <span class="o">.</span> <span class="s">&#34;TODO&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                             <span class="p">(</span><span class="nv">next</span> <span class="o">.</span> <span class="s">&#34;NEXT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                             <span class="p">(</span><span class="nv">wait</span> <span class="o">.</span> <span class="s">&#34;WAIT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                             <span class="p">(</span><span class="nv">done</span> <span class="o">.</span> <span class="s">&#34;DONE&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                             <span class="p">(</span><span class="nv">canceled</span> <span class="o">.</span> <span class="s">&#34;CNCL&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-edna-mode</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-agenda-files</span> <span class="p">(</span><span class="nf">list</span> <span class="nv">org-gtd-directory</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:bind</span>
+</span></span><span class="line"><span class="cl">  <span class="p">((</span><span class="s">&#34;C-c d c&#34;</span> <span class="o">.</span> <span class="nv">org-gtd-capture</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="s">&#34;C-c d e&#34;</span> <span class="o">.</span> <span class="nv">org-gtd-engage</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="s">&#34;C-c d p&#34;</span> <span class="o">.</span> <span class="nv">org-gtd-process-inbox</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="s">&#34;C-c d n&#34;</span> <span class="o">.</span> <span class="nv">org-gtd-show-all-next</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="s">&#34;C-c d s&#34;</span> <span class="o">.</span> <span class="nv">org-gtd-reflect-stuck-projects</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="nb">:map</span> <span class="nv">org-gtd-clarify-mode-map</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="s">&#34;C-c c&#34;</span> <span class="o">.</span> <span class="nv">org-gtd-organize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="nb">:map</span> <span class="nv">org-agenda-mode-map</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="s">&#34;C-c .&#34;</span> <span class="o">.</span> <span class="nv">org-gtd-agenda-transient</span><span class="p">)))</span></span></span></code></pre></div></div>
+<p>几个要点：</p>
+<ul>
+<li>*GTD 目录*：所有 GTD 数据集中存放在 <code>~/gtd</code> ，这个目录本身是一个 git 仓库</li>
+<li>*TODO 关键字*：定义了 <code>TODO</code> → <code>NEXT</code> → <code>WAIT</code> 的流转序列，以及 <code>DONE</code> / <code>CNCL</code> 两种终态。这对应了 GTD 中&quot;下一步行动&quot;（Next Action）和&quot;等待&quot;（Waiting For）的概念</li>
+<li>*<a href="https://www.nongnu.org/org-edna-el/" target="_blank" rel="noopener noreffer ">org-edna</a>*：一个 Org Mode 插件，允许在任务之间定义依赖关系。比如&quot;任务 A 完成后自动将任务 B 标记为 NEXT&quot;，这在管理项目型任务时非常实用</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>快捷键</th>
+          <th>功能</th>
+          <th>GTD 阶段</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>C-c d c</code></td>
+          <td>快速收集想法到 inbox</td>
+          <td>收集</td>
+      </tr>
+      <tr>
+          <td><code>C-c d p</code></td>
+          <td>逐条厘清 inbox 中的条目</td>
+          <td>厘清</td>
+      </tr>
+      <tr>
+          <td><code>C-c d e</code></td>
+          <td>查看可执行的任务列表</td>
+          <td>执行</td>
+      </tr>
+      <tr>
+          <td><code>C-c d n</code></td>
+          <td>显示所有&quot;下一步行动&quot;</td>
+          <td>执行</td>
+      </tr>
+      <tr>
+          <td><code>C-c d s</code></td>
+          <td>回顾卡住的项目</td>
+          <td>回顾</td>
+      </tr>
+  </tbody>
+</table>
+<p>日常使用中的典型流程是：脑中闪过一个念头，=C-c d c= 快速记录到 inbox；积攒了几条后，=C-c d p= 逐条厘清——是可执行的任务、某个项目的一部分、还是仅供参考的资料？厘清时按 <code>C-c c</code> 调用 org-gtd 的组织面板来分类。最后 <code>C-c d e</code> 进入 engage 视图，专注执行。</p>
+<h2 id="第一层-autosync-magit-实时同步">第一层：autosync-magit 实时同步</h2>
+<p><code>~/gtd</code> 是一个 git 仓库，同步的本质就是 git 操作。<a href="https://github.com/sbougerel/autosync-magit" target="_blank" rel="noopener noreffer ">autosync-magit</a> 是一个基于 <a href="https://magit.vc/" target="_blank" rel="noopener noreffer ">Magit</a> 的小型 minor mode，专门为&quot;用 git 在多设备间同步个人内容&quot;而设计。它的工作原理很简单：</p>
+<ol>
+<li>保存文件时，自动 <code>git add</code> + =git commit=（带 debounce）</li>
+<li>定时执行 <code>git pull</code></li>
+<li>commit 后延迟执行 <code>git push</code></li>
+</ol>
+<p>配置如下：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">autosync-magit</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:load-path</span> <span class="s">&#34;site-lisp/autosync-magit&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:commands</span> <span class="nv">autosync-magit-mode</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:custom</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">autosync-magit-commit-message</span> <span class="s">&#34;chore(gtd): auto-sync&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">autosync-magit-pull-timer</span> <span class="mi">600</span><span class="p">)</span>        <span class="c1">; 每 10 分钟 pull 一次</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">autosync-magit-push-debounce</span> <span class="mi">600</span><span class="p">)</span>     <span class="c1">; commit 后最多等 10 分钟再 push</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">autosync-magit-pull-interval</span> <span class="mi">10</span><span class="p">))</span>     <span class="c1">; 任意两次 pull 之间至少间隔 10 秒</span></span></span></code></pre></div></div>
+<h3 id="通过-dot-dir-locals-dot-el-激活">通过 .dir-locals.el 激活</h3>
+<p>autosync-magit 的激活方式很优雅——不需要在 init 文件中硬编码路径，而是在 <code>~/gtd/.dir-locals.el</code> 中声明：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">((</span><span class="no">nil</span> <span class="o">.</span> <span class="p">((</span><span class="nv">autosync-magit-commit-message</span> <span class="o">.</span> <span class="s">&#34;chore(gtd): auto-sync&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="nv">autosync-magit-pull-timer</span> <span class="o">.</span> <span class="mi">600</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="nv">autosync-magit-push-debounce</span> <span class="o">.</span> <span class="mi">600</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="nv">mode</span> <span class="o">.</span> <span class="nv">autosync-magit</span><span class="p">))))</span></span></span></code></pre></div></div>
+<p>这意味着：当你在 Emacs 中打开 <code>~/gtd/</code> 下的任何文件时，autosync-magit-mode 会自动启用，同步机制随即生效。关闭所有 <code>~/gtd/</code> 下的 buffer 后，同步自然停止。这种&quot;按需激活&quot;的设计非常 Emacs。</p>
+<p>为了让 Emacs 信任这些目录局部变量而不弹出确认提示，需要在 init 文件中将它们标记为安全：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">pair</span> <span class="o">&#39;</span><span class="p">((</span><span class="nv">autosync-magit-commit-message</span> <span class="o">.</span> <span class="nf">stringp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">(</span><span class="nv">autosync-magit-pull-timer</span>      <span class="o">.</span> <span class="nf">numberp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">(</span><span class="nv">autosync-magit-push-debounce</span>   <span class="o">.</span> <span class="nf">numberp</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">put</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">pair</span><span class="p">)</span> <span class="ss">&#39;safe-local-variable</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">pair</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;safe-local-eval-forms</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">autosync-magit-mode</span> <span class="mi">1</span><span class="p">))</span></span></span></code></pre></div></div>
+<h3 id="用-rebase-替代-merge">用 rebase 替代 merge</h3>
+<p>autosync-magit 原生的 pull 策略是 <code>fetch</code> + <code>merge</code> 。但在我的双设备场景下，第二层同步（稍后会讲到）会在主设备上做 squash + force-push，这意味着远端历史会被改写。此时 merge 会产生大量无意义的合并提交。</p>
+<p>因此，我通过 <code>define-advice</code> 将 pull 策略替换为 <code>fetch</code> + <code>rebase</code> ：</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">define-advice</span> <span class="nv">autosync-magit-pull</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">:override</span> <span class="p">(</span><span class="nv">path</span><span class="p">)</span> <span class="nv">rebase-and-reset-on-conflict</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Fetch + rebase; on conflict, abort and reset to upstream.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; ... 获取仓库路径，执行 fetch ...</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; fetch 完成后的 sentinel 中：</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">not</span> <span class="p">(</span><span class="nv">magit-rev-ancestor-p</span> <span class="s">&#34;@{upstream}&#34;</span> <span class="s">&#34;HEAD&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">exit-code</span> <span class="p">(</span><span class="nv">process-file</span> <span class="s">&#34;git&#34;</span> <span class="no">nil</span> <span class="no">nil</span> <span class="no">nil</span> <span class="s">&#34;rebase&#34;</span> <span class="s">&#34;@{upstream}&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">cond</span>
+</span></span><span class="line"><span class="cl">       <span class="p">((</span><span class="nv">zerop</span> <span class="nv">exit-code</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">run-hooks</span> <span class="ss">&#39;autosync-magit-after-merge-hook</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">;; rebase 冲突时：中止 rebase，创建备份分支，然后硬重置到上游</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">process-file</span> <span class="s">&#34;git&#34;</span> <span class="no">nil</span> <span class="no">nil</span> <span class="no">nil</span> <span class="s">&#34;rebase&#34;</span> <span class="s">&#34;--abort&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">gtd--create-backup-branch</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">process-file</span> <span class="s">&#34;git&#34;</span> <span class="no">nil</span> <span class="no">nil</span> <span class="no">nil</span> <span class="s">&#34;reset&#34;</span> <span class="s">&#34;--hard&#34;</span> <span class="s">&#34;@{upstream}&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">gtd--revert-repo-buffers</span> <span class="nv">repo-dir</span><span class="p">))))))</span></span></span></code></pre></div></div>
+<p>冲突处理策略是 <strong>&ldquo;以远端为准&rdquo;</strong> ——如果 rebase 遇到冲突，先创建一个备份分支（形如 <code>backup/gtd-20260313-143022-a1b2</code> ）保存本地状态，然后 <code>reset --hard</code> 到上游版本。这看起来激进，但对于 GTD 数据来说是合理的：两台设备上不太可能同时编辑同一行，真正发生冲突时，保留远端版本并保留本地备份，比让同步卡住要好得多。</p>
+<h2 id="第二层-safety-net-定时安全网">第二层：Safety-net 定时安全网</h2>
+<p>第一层解决了&quot;Emacs 运行时&quot;的同步问题。但如果 Emacs 没有运行呢？或者 autosync-magit 因为网络问题 push 失败了呢？再者，一天下来几十个 <code>chore(gtd): auto-sync</code> 的提交，git log 看起来也不太美观。</p>
+<p>第二层 Safety-net 就是为了解决这些问题。它基于 <a href="https://github.com/haji-ali/elcron" target="_blank" rel="noopener noreffer ">elcron</a>（一个 Emacs 内的 cron 调度器），每天定时执行三次。</p>
+<h3 id="主设备与副设备的分工">主设备与副设备的分工</h3>
+<p>两台设备的 Safety-net 行为不同：</p>
+<table>
+  <thead>
+      <tr>
+          <th>设备</th>
+          <th>角色</th>
+          <th>定时时间</th>
+          <th>行为</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>公司</td>
+          <td>secondary</td>
+          <td>11:45, 17:45, 22:45</td>
+          <td>plain commit + push</td>
+      </tr>
+      <tr>
+          <td>家里</td>
+          <td>primary</td>
+          <td>11:50, 17:50, 22:50</td>
+          <td>squash 当天提交 + AI 生成 commit</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>副设备比主设备早 5 分钟运行。这样当主设备的 Safety-net 触发时，副设备今天的提交已经 push 到远端了，主设备 fetch 后可以一并 squash。</p>
+</blockquote>
+<p>设备角色的判定通过 macOS 的 <code>scutil --get LocalHostName</code> 实现：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">gtd-safety-net--primary-p</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Return non-nil if the current device is the primary host.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">string=</span> <span class="p">(</span><span class="nv">string-trim</span> <span class="p">(</span><span class="nv">shell-command-to-string</span> <span class="s">&#34;scutil --get LocalHostName&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">           <span class="nv">gtd-safety-net-primary-host</span><span class="p">))</span>  <span class="c1">; &#34;Dis-Mac-mini&#34;</span></span></span></code></pre></div></div>
+<p>由于两台设备使用同一套 <code>~/.emacs.d</code> 配置，这个运行时判定让同一份代码在不同设备上自动执行不同的逻辑。</p>
+<h3 id="副设备-plain-commit-plus-push">副设备：plain commit + push</h3>
+<p>副设备的逻辑相对简单：</p>
+<ol>
+<li>如果有未提交的改动，=git add -A= + =git commit=（带 AI 生成的 commit message）</li>
+<li>如果有未推送的提交（包括 autosync-magit 提交成功但 push 失败的情况），=fetch= + <code>rebase</code> + <code>push</code></li>
+</ol>
+<p>这是一张兜底的安全网：即使 autosync-magit 没有正常工作，一天至少有三次机会把改动推上去。</p>
+<h3 id="主设备-squash-plus-force-push">主设备：squash + force-push</h3>
+<p>主设备的行为更有意思。它会将当天所有提交 squash 成一个提交，并用 AI 生成一条有意义的 commit message。</p>
+<p>流程如下：</p>
+<ol>
+<li>先提交所有未暂存的改动</li>
+<li><code>fetch</code> + <code>rebase</code> 整合远端提交</li>
+<li>找到&quot;今天第一个提交之前的那个提交&quot;作为 reset 目标</li>
+<li><code>git reset --soft</code> 到该目标（保留所有改动在暂存区）</li>
+<li>用 <code>git diff</code> 获取今天的全部变更</li>
+<li>调用 Claude Code 根据 diff 生成 commit message</li>
+<li>用生成的 message 创建一个新提交</li>
+<li><code>git push --force-with-lease</code> 推送到远端</li>
+</ol>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-nil">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code class="language-nil" data-lang="nil"># squash 前的 git log
+a1b2c3d chore(gtd): auto-sync     ← 今天的自动提交
+e4f5g6h chore(gtd): auto-sync
+i7j8k9l chore(gtd): auto-sync
+m0n1o2p [2026-03-12] 完成周报，整理读书笔记  ← 昨天的 squash 结果
+
+# squash 后的 git log
+x1y2z3w [2026-03-13] 新增季度 OKR 草案，调整项目优先级  ← AI 生成
+m0n1o2p [2026-03-12] 完成周报，整理读书笔记</code></pre></div>
+<h3 id="claude-code-生成-commit-message">Claude Code 生成 commit message</h3>
+<p>这是整套方案中最有趣的部分。Safety-net 会调用 <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener noreffer ">Claude Code</a> 的 <code>--print</code> 模式（非交互式，直接输出结果），将 git diff 作为输入，让 AI 生成一条结构化的 commit message。</p>
+<p>Prompt 的要求是：</p>
+<ul>
+<li>第一行格式为 <code>[时间] 变更要点</code></li>
+<li>空行后用列表逐项说明</li>
+<li>不加 Conventional Commits 前缀</li>
+</ul>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defcustom</span> <span class="nv">gtd-safety-net-claude-binary</span> <span class="s">&#34;/usr/local/bin/mc&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Absolute path to the Claude Code binary.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:type</span> <span class="ss">&#39;file</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defcustom</span> <span class="nv">gtd-safety-net-claude-timeout</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Timeout in seconds for Claude Code AI calls.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:type</span> <span class="ss">&#39;natnum</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defcustom</span> <span class="nv">gtd-safety-net-max-diff-size</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">100</span> <span class="mi">1024</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Maximum diff size in characters to send to Claude.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:type</span> <span class="ss">&#39;natnum</span><span class="p">)</span></span></span></code></pre></div></div>
+<p>这里用绝对路径 <code>/usr/local/bin/mc</code> 指定 Claude Code 二进制文件，是因为 GUI Emacs 的 PATH 环境变量往往不完整。超时设为 120 秒，diff 超过 100KB 会被截断——毕竟 GTD 数据的单日变更通常不会太大。</p>
+<p>如果 Claude Code 调用失败（超时、网络问题等），会 fallback 到一个朴素的时间戳 commit message：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-nil">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code class="language-nil" data-lang="nil">chore(gtd): auto-commit 2026-03-13 17:50</code></pre></div>
+<h3 id="幂等性设计">幂等性设计</h3>
+<p>主设备的 squash 操作是幂等的。每次 squash 后的提交会附带一个 git trailer：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-nil">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code class="language-nil" data-lang="nil">Squashed-by: gtd-safety-net</code></pre></div>
+<p>下次 Safety-net 运行时，会检查 HEAD 提交是否已包含这个 trailer。如果包含，说明今天已经 squash 过了，跳过即可。这意味着即使 Safety-net 一天触发三次，squash 也只会执行一次。</p>
+<h3 id="elcron-调度">elcron 调度</h3>
+<p><a href="https://github.com/haji-ali/elcron" target="_blank" rel="noopener noreffer ">elcron</a> 在 Emacs 内部实现了类似 cron 的调度功能。它的 cron 表达式是 7 字段的：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-nil">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code class="language-nil" data-lang="nil">秒 分 时 日 月 星期 年</code></pre></div>
+<p>Safety-net 的调度在 elcron 加载后自动启动：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="ss">&#39;elcron</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">gtd-safety-net-start</span><span class="p">))</span></span></span></code></pre></div></div>
+<p>手动管理也很方便：=M-x gtd-safety-net-start= 启动，=M-x gtd-safety-net-cancel= 取消，=M-x gtd-safety-net-commit= 立即执行一次。</p>
+<h2 id="两层联动-全局同步锁">两层联动：全局同步锁</h2>
+<p>两层同步共享同一个 Emacs 进程，因此需要协调。如果 Layer 1 正在 push 的同时 Layer 2 开始 squash，结果将不可预测。</p>
+<p>解决方案是一个全局互斥锁 <code>gtd--sync-lock</code> ：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defvar</span> <span class="nv">gtd--sync-lock</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Non-nil when a GTD sync operation is in progress.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defmacro</span> <span class="nv">gtd--with-sync-lock</span> <span class="p">(</span><span class="kp">&amp;rest</span> <span class="nv">body</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Execute BODY if the sync lock is available, skip otherwise.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">`</span><span class="p">(</span><span class="nb">if</span> <span class="nv">gtd--sync-lock</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nf">message</span> <span class="s">&#34;[gtd] Sync already in progress, skipping.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="p">(</span><span class="nb">unwind-protect</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="nb">progn</span> <span class="p">(</span><span class="nb">setq</span> <span class="nv">gtd--sync-lock</span> <span class="no">t</span><span class="p">)</span> <span class="o">,@</span><span class="nv">body</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nb">setq</span> <span class="nv">gtd--sync-lock</span> <span class="no">nil</span><span class="p">))))</span></span></span></code></pre></div></div>
+<p>Layer 2 通过 <code>gtd--with-sync-lock</code> 包裹整个 commit 流程；Layer 1 的 pull 和 push 也会检查这个锁。任何时刻只有一层在执行 git 操作，另一层会优雅地跳过。</p>
+<h2 id="备份与清理">备份与清理</h2>
+<p>冲突处理时创建的备份分支不会无限累积。Safety-net 每次运行结束后会清理超过 30 天的备份分支：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-emacs-lisp">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defcustom</span> <span class="nv">gtd-safety-net-backup-retention-days</span> <span class="mi">30</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Number of days to retain backup branches.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:type</span> <span class="ss">&#39;natnum</span><span class="p">)</span></span></span></code></pre></div></div>
+<h2 id="整体架构图">整体架构图</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-nil">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code class="language-nil" data-lang="nil">┌─────────────────────────────────────────────────┐
+│                 ~/gtd (git repo)                │
+│                                                 │
+│  .dir-locals.el → 自动激活 autosync-magit-mode  │
+└────────────────────┬────────────────────────────┘
+                     │
+       ┌─────────────┴──────────────┐
+       ▼                            ▼
+┌──────────────┐           ┌──────────────────┐
+│   Layer 1    │           │     Layer 2      │
+│ autosync-    │           │   safety-net     │
+│ magit        │           │   (elcron)       │
+├──────────────┤           ├──────────────────┤
+│ 触发: 保存时 │           │ 触发: 定时       │
+│ fetch+rebase │           │ 每天 3 次        │
+│ commit+push  │           │                  │
+│ (debounce)   │           │ secondary:       │
+│              │           │   plain commit   │
+│              │           │                  │
+│              │           │ primary:         │
+│              │           │   squash + AI    │
+│              │           │   force-push     │
+└──────┬───────┘           └────────┬─────────┘
+       │                            │
+       └──────┬─── sync-lock ──┬────┘
+              ▼                ▼
+        ┌──────────────────────────┐
+        │    Remote (GitHub等)     │
+        └──────────────────────────┘</code></pre></div>
+<h2 id="小结">小结</h2>
+<p>这套方案的核心思想是 <strong>&ldquo;让同步完全透明&rdquo;</strong> ：打开 GTD 文件、记录想法、保存、关闭——同步在背后自动发生。两层机制互为补充：</p>
+<ul>
+<li>*Layer 1*：实时性好，但依赖 Emacs 运行且依赖网络</li>
+<li>*Layer 2*：定时兜底，保证数据终究会同步；同时在主设备上压缩历史，保持 git log 的整洁</li>
+</ul>
+<p>对于&quot;公司 + 家里&quot;的双 Mac 场景，这套方案运行了一段时间后，体验非常流畅——几乎不需要操心同步问题，专注于 GTD 本身即可。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-03-13</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 X" data-sharer="x" data-url="https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/" data-title="在 Emacs 中实践 GTD 与多设备同步" data-hashtags="Emacs,org-mode,GTD,claude-code"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Threads" data-sharer="threads" data-url="https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/" data-title="在 Emacs 中实践 GTD 与多设备同步"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/" data-hashtag="Emacs"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/" data-title="在 Emacs 中实践 GTD 与多设备同步"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/" data-title="在 Emacs 中实践 GTD 与多设备同步"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@16.9.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/" data-title="在 Emacs 中实践 GTD 与多设备同步"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Diaspora" data-sharer="diaspora" data-url="https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/" data-title="在 Emacs 中实践 GTD 与多设备同步" data-description=""><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=https%3a%2f%2flemyx.github.io%2fposts%2f2026%2f%25E5%259C%25A8-emacs-%25E4%25B8%25AD%25E5%25AE%259E%25E8%25B7%25B5-gtd-%25E4%25B8%258E%25E5%25A4%259A%25E8%25AE%25BE%25E5%25A4%2587%25E5%2590%258C%25E6%25AD%25A5%2f&amp;text=%e5%9c%a8%20Emacs%20%e4%b8%ad%e5%ae%9e%e8%b7%b5%20GTD%20%e4%b8%8e%e5%a4%9a%e8%ae%be%e5%a4%87%e5%90%8c%e6%ad%a5" target="_blank" title="分享到 Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags" aria-hidden="true"></i>&nbsp;<a href="/tags/emacs/">Emacs</a>,&nbsp;<a href="/tags/org-mode/">Org-Mode</a>,&nbsp;<a href="/tags/gtd/">GTD</a>,&nbsp;<a href="/tags/claude-code/">Claude-Code</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2026/synctex-in-tui-emacs/" class="prev" rel="prev" title="synctex in TUI Emacs"><i class="fas fa-angle-left" aria-hidden="true"></i>synctex in TUI Emacs</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.157.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">lemyx</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment" aria-hidden="true"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script><script>window.config={"comment":{}};</script><script src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>GTD - 标签 - </title>
+        <link>https://lemyx.github.io/tags/gtd/</link>
+        <description>GTD - 标签 - </description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dyi.shiou@gmail.com (lemyx)</managingEditor>
+            <webMaster>dyi.shiou@gmail.com (lemyx)</webMaster><lastBuildDate>Fri, 13 Mar 2026 12:00:00 &#43;0800</lastBuildDate><atom:link href="https://lemyx.github.io/tags/gtd/" rel="self" type="application/rss+xml" /><item>
+    <title>在 Emacs 中实践 GTD 与多设备同步</title>
+    <link>https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/</link>
+    <pubDate>Fri, 13 Mar 2026 12:00:00 &#43;0800</pubDate>
+    <author>dyi.shiou@gmail.com (lemyx)</author>
+    <guid>https://lemyx.github.io/posts/2026/%E5%9C%A8-emacs-%E4%B8%AD%E5%AE%9E%E8%B7%B5-gtd-%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5/</guid>
+    <description><![CDATA[<h2 id="为什么要在-emacs-里做-gtd">为什么要在 Emacs 里做 GTD</h2>
+<p><a href="https://gettingthingsdone.com/" target="_blank" rel="noopener noreffer ">Getting Things Done</a>（GTD）是 David Allen 提出的一套时间管理方法论，其核心思想是：把脑中所有待办事项全部&quot;清空&quot;到一个可信赖的外部系统中，然后按流程收集、厘清、组织、回顾、执行。这套方法论的价值在于，它让大脑从&quot;记住事情&quot;的负担中解脱出来，专注于&quot;做事情&quot;本身。</p>]]></description>
+</item>
+</channel>
+</rss>
